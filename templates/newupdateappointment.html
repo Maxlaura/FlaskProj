@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="/index">Veterinary ABC</a>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Appointment</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">{{pageTitle}}</li>
+                        </ol>
+                        <!--List-->
+                        <div class="card-body">
+                                        <form action="/updateOrInsertAppointment" method="POST">
+                                            {% if appointment %}
+                                                <input type="text" name="_id" value="{{ appointment['_id'] }}" hidden>
+                                            {% endif %}
+                                            <div class="form-row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputDate">Date</label>
+                                                        <input class="form-control py-4" name="date" id="inputDate" type="date" placeholder="Enter appointment date" value="{{ appointment["date"] }}" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label class="small mb-1" for="inputHour">Hour</label>
+                                                        <input class="form-control py-4" name="hour" id="inputHour" type="time" placeholder="Enter appointment hour" value="{{ appointment["hour"] }}"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="small mb-1" for="inputCause">Cause</label>
+                                                <input class="form-control py-4" name="cause" id="inputCause" type="text" aria-describedby="emailHelp" placeholder="Enter cause" value="{{ appointment["cause"] }}"/>
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="textDescription">Description</label>
+                                                <textarea class="form-control" name="description" id="textDescription" rows="3">{{ appointment['description'] }}</textarea>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="selectCustomer">Select Customer</label>
+                                                <select name="customer" class="form-control" id="selectCustomer">
+                                                  {% for customer in customers %}
+                                                      <option value="{{ customer["name"] }} {{ customer["surname"] }}">{{ customer["name"] }} {{ customer["surname"] }}</option>
+                                                  {% endfor %}
+                                                </select>
+                                            </div>
+                                            <div class="form-group mt-4 mb-0">
+                                                <button type="submit" class="btn btn-primary">{{ action_button_text }}</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Demo content</div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </body>
+{% endblock content %}
