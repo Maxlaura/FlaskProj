@@ -3,6 +3,7 @@
 
 Veterinary project is a simple Flask project that simulates a Content Management System where user is able to handle customers and appointments.
 
+APP URL: https://veterinary-app-demo.herokuapp.com/
 ### Users
 
 In this section user is able to:
@@ -24,7 +25,7 @@ In this section user is able to:
 For this section, "admin" is able to create a new appointment choosing: data, hour, cause of the appointment, description and select an existing user from the given options.
 
 ### Database structure
-Everything is based on MongoDB, the main db name is:"veterinary".
+Everything is based on MongoDB, the main db is hosted on free tire using mLab.
 There are 2 main collections: "Customer" and "Appointment"
 
 Customers:
@@ -52,6 +53,8 @@ Appointments:
 ```
 
 ### Tech
+
+Used Heroku CLI for heroku deployment
 
 This project uses:
 - Python
