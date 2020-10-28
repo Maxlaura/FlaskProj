@@ -1,82 +1,85 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<body class="sb-nav-fixed">
-        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="/index">Veterinary ABC</a>
-        </nav>
-        <div id="layoutSidenav">
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid">
-                        <h1 class="mt-4">Customer</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">{{pageTitle}}</li>
-                        </ol>
-                        <!--List-->
-                        <div class="card-body">
-                                        <form action="/updateOrInsertUser" method="POST">
-                                            {% if customer %}
-                                                <input type="text" name="_id" value="{{ customer['_id'] }}" hidden>
-                                            {% endif %}
-                                            <div class="form-row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputFirstName">First Name</label>
-                                                        <input class="form-control py-4" name="name" id="inputFirstName" type="text" placeholder="Enter first name" value="{{ customer["name"] }}" />
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputLastName">Last Name</label>
-                                                        <input class="form-control py-4" name="surname" id="inputLastName" type="text" placeholder="Enter last name" value="{{ customer["surname"] }}"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                                <input class="form-control py-4" name="email" id="inputEmailAddress" type="email" aria-describedby="emailHelp" placeholder="Enter email address" value="{{ customer["email"] }}"/>
-                                            </div>
-                                            <div class="form-row">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputCountry">Country</label>
-                                                        <input class="form-control py-4" name="country" id="inputCountry" type="text" placeholder="Enter country" value="{{ customer["country"] }}"/>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputCity">City</label>
-                                                        <input class="form-control py-4" name="city" id="inputCity" type="text" placeholder="Enter city" value="{{ customer["city"] }}"/>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label class="small mb-1" for="inputAddress">Address</label>
-                                                        <input class="form-control py-4" name="address" id="inputAddress" type="text" placeholder="Enter address" value="{{ customer["address"] }}"/>
-                                                    </div>
-                                                </div>
-                                            </div>
+    <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">
+                    <h1 class="mt-4">Customer</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">{{ pageTitle }}</li>
+                    </ol>
+                    <!--List-->
+                    <div class="card-body">
 
-                                            <div class="form-group">
-                                                <label class="small mb-1" for="inputPhoneNumber">Phone</label>
-                                                <input class="form-control py-4" name="phone" id="inputPhoneNumber" type="text" aria-describedby="phoneHelp" placeholder="Enter phone number" value="{{ customer["phone"] }}"/>
-                                            </div>
-                                            <div class="form-group mt-4 mb-0">
-                                                <button type="submit" class="btn btn-primary">{{ action_button_text }}</button>
-                                            </div>
-                                        </form>
+                        <form action="/updateOrInsertUser" name="userForm" method="POST">
+                            {% if customer %}
+                                <input type="text" name="_id" value="{{ customer['_id'] }}" hidden>
+                            {% endif %}
+                            <div class="form-row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="inputFirstName">First Name</label>
+                                        <input class="form-control py-4" name="name" id="inputFirstName" type="text"
+                                               placeholder="Enter first name" value="{{ customer["name"] }}"/>
                                     </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="inputLastName">Last Name</label>
+                                        <input class="form-control py-4" name="surname" id="inputLastName" type="text"
+                                               placeholder="Enter last name" value="{{ customer["surname"] }}"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="small mb-1" for="inputEmailAddress">Email</label>
+                                <input class="form-control py-4" name="email" id="inputEmailAddress" type="email"
+                                       aria-describedby="emailHelp" placeholder="Enter email address"
+                                       value="{{ customer["email"] }}"/>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="inputCountry">Country</label>
+                                        <input class="form-control py-4" name="country" id="inputCountry" type="text"
+                                               placeholder="Enter country" value="{{ customer["country"] }}"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="inputCity">City</label>
+                                        <input class="form-control py-4" name="city" id="inputCity" type="text"
+                                               placeholder="Enter city" value="{{ customer["city"] }}"/>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="small mb-1" for="inputAddress">Address</label>
+                                        <input class="form-control py-4" name="address" id="inputAddress" type="text"
+                                               placeholder="Enter address" value="{{ customer["address"] }}"/>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="small mb-1" for="inputPhoneNumber">Phone</label>
+                                <input class="form-control py-4" name="phone" id="inputPhoneNumber" type="text"
+                                       aria-describedby="phoneHelp" placeholder="Enter phone number"
+                                       value="{{ customer["phone"] }}"/>
+                            </div>
+                            <div class="form-group mt-4 mb-0">
+                                <button type="submit" class="btn btn-primary">{{ actionButtonText }}</button>
+                            </div>
+                        </form>
                     </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Demo content</div>
-                        </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Demo content</div>
                     </div>
-                </footer>
-            </div>
+                </div>
+            </footer>
         </div>
-    </body>
 {% endblock content %}
