@@ -2,9 +2,9 @@
 
 ## Overview
 
-[Veterinary ABC](https://veterinary-app-demo.herokuapp.com/index) is a CMS (Content Management System) concept, t was created with the intention of helping veterinarians manage clients and appointments.
+[Veterinary ABC](https://veterinary-app-demo.herokuapp.com/index) is a CMS (Content Management System) concept created with the intention of helping veterinarians manage clients and appointments.
 
-The vet, once into the platform, is able to easely manage customers and appointments on within the app.
+The vet, once on the platform, is able to easely manage customers and appointments within the app.
 
 The appointments and customers are displayed using tables, for easy CRUD operations (Create, Read, Update, Delete). 
 
@@ -142,10 +142,10 @@ A W3C HTML validatio test has done on the website wich canbe cound [here](https:
 ### User testing
 The list of tests that has been done:
 - Test insert a new customer
-    - Test insert a new customer with different data, also test the part of validation forms that application contains, see if all the errors appears accordly
+    - Test insert a new customer with different data, also test the part of validation forms that application contains, see if all the errors appears accordingly
 - Test insert a new appointment
     - Check if all the fields are checked within validation, insert a new appointment picking a user from the existing list of customers
-- Test the validation part on the interted data
+- Test the validation part on the inserted data
 - Test the edit customer
     - Check if all data is display correctly on the fields, update the existing customer with new data
 - Test update appointment
@@ -180,7 +180,7 @@ How to local deploy the project.
 
 ##### Requirements
 
-After clonig the project to your local machine, you will need to install all the projects dependencies type `pip install -r requirements.txt`. If you add or update any new packages to the project use `pip freeze --local > requirements.txt ` to update the requirements.txt file with the new dependencies
+After cloning the project to your local machine, you will need to install all the projects dependencies type `pip install -r requirements.txt`. If you add or update any new packages to the project use `pip freeze --local > requirements.txt ` to update the requirements.txt file with the new dependencies
 
 ##### Environment Variables
 
@@ -199,5 +199,5 @@ MONGO_URI : This is the URI to connect to the Mongo Database
 
 ##### Deployment
 
-You can easely pull request on this project on master banch. If accepted all the edits that was made, will be deployed to Heroku. You can run your own heroku application by creating an account on the Heroku website and following the tutorial on how to deploy a Python project wich can be find here: https://devcenter.heroku.com/articles/getting-started-with-python 
+You can easely pull request on this project on master banch. If accepted - all the edits made will be deployed to Heroku. You can run your own heroku application by creating an account on the Heroku website and following the tutorial on how to deploy a Python project wich can be find here: https://devcenter.heroku.com/articles/getting-started-with-python 
 For questions or errors, i suggest use StackOverflow
