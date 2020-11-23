@@ -4,7 +4,7 @@
 
 [Veterinary ABC](https://veterinary-app-demo.herokuapp.com/index) is a CMS (Content Management System) concept created with the intention of helping veterinarians manage clients and appointments.
 
-The vet, once on the platform, is able to easely manage customers and appointments within the app.
+The vet, once on the platform, is able to easily manage customers and appointments within the app.
 
 The appointments and customers are displayed using tables, for easy CRUD operations (Create, Read, Update, Delete). 
 
